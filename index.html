@@ -6,25 +6,17 @@
 
 <body>
     <div ng-app="myApp">
-        <div ng-controller="FirstCtrl">
-            <input type="text" ng-model="data.message">
-            <h1>{{data.message + "world"}}</h1>
-
-            <div class="{{ data.message }}">
-                <p>This is styled with this class</p>
-            </div>
-        </div>
-        <div ng-controller="SecondCtrl">
-            <input type="text" ng-model="data.message">
-            <h1>{{data.message | reverse }}</h1>
-            <h1>{{data.message}}</h1>
-
-            <div class="{{ data.message }}">
-                <p>This is styled with this class</p>
-            </div>
+        <div ng-controller='AvengersCtrl'>
+            <input type="text" ng-model="search">
+            <table ng-repeat='actor in avengers.cast | limitTo:-5 | filter:search | orderBy:"name"'>
+                <tr>
+                    <td>{{actor.name}}</td>
+                    <td>{{actor.character | lowercase }}</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <script type="text/javascript" src='angular.js'></script>
-    <script type="text/javascript" src='app.js'></script>
+    <script type="text/javascript" src=' angular.js '></script>
+    <script type="text/javascript" src='app.js '></script>
 
 </body>
