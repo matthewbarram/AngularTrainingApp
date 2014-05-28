@@ -2,19 +2,12 @@
 
 <head>
     <link rel="stylesheet" href="foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
-    <div ng-app="myApp">
-        <div ng-controller='AvengersCtrl'>
-            <input type="text" ng-model="search">
-            <table ng-repeat='actor in avengers.cast | limitTo:-5 | filter:search | orderBy:"name"'>
-                <tr>
-                    <td>{{actor.name}}</td>
-                    <td>{{actor.character | lowercase }}</td>
-                </tr>
-            </table>
-        </div>
+    <div ng-app="app">
+        <dumb-password></dumb-password>
     </div>
     <script type="text/javascript" src=' angular.js '></script>
     <script type="text/javascript" src='app.js '></script>
